@@ -1,0 +1,66 @@
+{% extends 'main.html' %} 
+
+{% block content %}
+
+{% load static %}
+
+
+
+
+  <!-- Main Section -->
+  <main class="projects">
+    <section class="hero-section text-center">
+      <div class="container container--narrow">
+        <div class="hero-section__box">
+          <h2>Workshops</span></h2>
+        </div>
+      
+      </div>
+    </section>
+    <!-- Search Result: DevList -->
+    <section class="projectsList">
+      <div class="container">
+        <div class="grid grid--three">
+          
+        {% for view_workshop in view_workshop %}
+  
+
+          <div class="column">
+            <div class="card project">
+              <a href="{% url 'workshop_details' view_workshop.id %}" class="project">
+               
+                <div class="card__body">
+                  <h3 class="project__title">{{ view_workshop.workshop_name }}</h3>
+                  <p>{{view_workshop.workshop_subject}}</p>
+                  <p>{{view_workshop.workshop_details}}</p>
+                  <p>Date:- {{view_workshop.workshop_date}} Time:- {{view_workshop.workshop_time}} </p>
+              
+                </div>
+              </a>
+            </div>
+          </div>
+
+          
+   
+       
+    {% endfor %} 
+
+        
+
+        </div>
+      </div>
+    </section>
+
+ 
+  </main>
+
+
+
+
+
+
+
+{% endblock content %}
+
+
+

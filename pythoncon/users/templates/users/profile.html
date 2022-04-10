@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% load static %} 
+
+{% block content %} 
+
+<h1> users profile page </h1>
+
+{% for profiles in profiles %}
+  
+
+<p>{{ profiles.owner.name}}</p>
+
+{% endfor %} 
+
+
+
+
+
+
+{% endblock content %} 

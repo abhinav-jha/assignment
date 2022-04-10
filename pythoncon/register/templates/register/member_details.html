@@ -1,0 +1,63 @@
+{% extends 'main.html' %} 
+
+{% block content %}
+
+{% load static %}
+
+<main class="profile my-md">
+    <div class="container">
+      <div class="layout">
+        <div class="column column--1of3">
+          <div class="card text-center">
+            <div class="card__body dev">
+              <img class="avatar avatar--xl" src="{{ memberObj.profile_pic.url }}" />
+              <h2 class="dev__name">{{ memberObj.full_name }}</h2>
+             
+              <p class="dev__location">{{ memberObj.member_type }}</p>
+           
+              {% if memberObj.member_type == 'Instructor' %}
+              <a href="{% url 'create_workshop' %}" class="btn btn--sub btn--lg">Create Workshop </a> 
+              
+              <a href="#" class="btn btn--sub btn--lg">Add Skill </a> 
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="column column--2of3">
+          <div class="devInfo">
+            <h3 class="devInfo__title">About Me</h3>
+            <p class="devInfo__about">
+                {{ memberObj.intro }}
+            </p>
+          </div>
+          {% if memberObj.member_type == 'Instructor' %}
+          <div class="devInfo">
+            <h3 class="devInfo__title">Skills</h3>
+            <div class="devInfo__skills">
+              <div class="devSkill">
+                <h4 class="devSkill__title">{{ memberObj.skill_set }}</h4>
+              
+              </div>
+            {% elif memberObj.member_type == 'Attendee' %}
+
+              <div class="devInfo">
+                <h3 class="devInfo__title">Reason</h3>
+                <div class="devInfo__skills">
+                  <div class="devSkill">
+                    <h4 class="devSkill__title">{{ memberObj.reason }}</h4>
+                  
+                  </div>
+
+            {% endif %}
+  
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+{% endblock content %}
+
+

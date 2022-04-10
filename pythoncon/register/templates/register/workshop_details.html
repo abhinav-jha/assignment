@@ -1,0 +1,60 @@
+{% extends 'main.html' %} 
+
+{% block content %}
+
+{% load static %}
+
+<main class="profile my-md">
+    <div class="container">
+      <div class="layout">
+        <div class="column column--1of3">
+          <div class="card text-center">
+            <div class="card__body dev">
+             
+              <a href="#" class="btn btn--sub btn--lg">Add Participants </a> 
+           
+            </div>
+          </div>
+        </div>
+        <div class="column column--2of3">
+          <div class="devInfo">
+            <h3 class="devInfo__title">Workshop Details</h3>
+            <p class="devInfo__about">
+              Name :- {{workshopObj.workshop_name}}
+            </p>
+            <p class="devInfo__about">
+              Subject :- {{workshopObj.workshop_subject}}
+            </p>
+            <p class="devInfo__about">
+              Details :- {{workshopObj.workshop_details}}
+            </p>
+            <p class="devInfo__about">
+              Date :- {{workshopObj.workshop_date}}
+            </p>
+            <p class="devInfo__about">
+              Time :- {{workshopObj.workshop_time}}
+            </p>
+          </div>
+      
+  
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+
